@@ -17,12 +17,12 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 
 /**
- * Created by cc on 2018/9/21.
- *
- * function :
- */
+*  相机基础类
+* @Author cc
+* @Date 2018/10/22 15:26
+* @version 1.0
+*/
 class CameraView : SurfaceView, SurfaceHolder.Callback, Camera.AutoFocusCallback {
-
 
     private var cameraInfo: Camera.CameraInfo? = null
     private var mCamera: Camera? = null
@@ -104,7 +104,7 @@ class CameraView : SurfaceView, SurfaceHolder.Callback, Camera.AutoFocusCallback
     }
 
     override fun onAutoFocus(p0: Boolean, p1: Camera?) {
-
+        mCamera?.cancelAutoFocus()
     }
 
     // 设置相机默认参数

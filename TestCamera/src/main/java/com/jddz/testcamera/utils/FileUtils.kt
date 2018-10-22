@@ -68,5 +68,33 @@ class FileUtils {
             }
             return file
         }
+
+        /**
+         * 删除文件
+         *
+         */
+        fun deleteFile(path: String): Boolean {
+            if (path == null || path.trim().isEmpty()) {
+                return true
+            }
+            val file = File(path)
+            if (!file.exists()) {
+                return true
+            }
+            if (file.isFile) {
+                return file.delete()
+            }
+            if (!file.isDirectory) {
+                return false
+            }
+            for (f in file.listFiles()!!) {
+                if (f.isFile) {
+                    f.delete()
+                } else if (f.isDirectory) {
+                    deleteFile(f.absolutePath)
+                }
+            }
+            return file.delete()
+        }
     }
 }

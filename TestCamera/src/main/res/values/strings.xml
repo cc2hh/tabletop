@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">相机插件</string>
+    <string name="save_path">sclxxCamera</string>
+    <string name="save_file">camera</string>
+</resources>

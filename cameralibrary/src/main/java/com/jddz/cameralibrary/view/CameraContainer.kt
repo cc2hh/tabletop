@@ -24,6 +24,7 @@ class CameraContainer : RelativeLayout {
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
         View.inflate(context, R.layout.cameracontainer, this)
 
+        CameraView
         var disposable: Disposable? = null
         val flowable = Flowable.defer { Flowable.fromCallable { 1 } }
                 .delay(500, TimeUnit.MILLISECONDS)
@@ -37,8 +38,10 @@ class CameraContainer : RelativeLayout {
                 MotionEvent.ACTION_UP -> {
                     val point = Point(motionEvent.x.toInt(), motionEvent.y.toInt())
                     disposable = flowable.subscribe {
-                        camera.autoFocus(point, Camera.AutoFocusCallback { bool, _ ->
+                        camera.autoFocus(point, Camera.AutoFocusCallback { bool, camera ->
                             System.out.println("setOnTouchListener----$bool")
+                            // 手动聚焦则取消自动聚焦效果
+                            camera.cancelAutoFocus()
                             focus.onFocusCallBack(bool)
                             disposable?.dispose()
                         })
