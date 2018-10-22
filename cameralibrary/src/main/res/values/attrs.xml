@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FocusView">
+        <attr name="focus_focusing_id" format="integer" />
+        <attr name="focus_success_id" format="integer" />
+        <attr name="focus_fail_id" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CameraLine">
+        <attr name="lineIsWide" format="boolean"/>
+        <attr name="lineCrossLength" format="dimension"/>
+        <attr name="lineColor" format="color"/>
+        <attr name="lineWidth" format="dimension"/>
+        <attr name="lineCrossWidth" format="dimension"/>
+        <attr name="lineCrossColor" format="color"/>
+        <attr name="lineIsShow" format="boolean"/>
+    </declare-styleable>
+</resources>

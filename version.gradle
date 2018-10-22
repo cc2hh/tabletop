@@ -10,11 +10,15 @@ ext.deps = [:]
 def versions = [:]
 versions.support = "26.0.1"
 versions.constraint_layout = "1.1.3"
-versions.kotlin = "1.2.50"
-versions.android_gradle = "3.1.4"
+versions.kotlin = "1.2.70"
+versions.android_gradle = '3.2.1'
 versions.junit = "4.12"
 versions.atsl_runner = "1.0.2"
 versions.espresso = "3.0.2"
+versions.glide = "3.7.0"
+versions.rxjava = "2.1.17"
+versions.rxandroid = "2.0.2"
+versions.kotlinx_coroutines= "0.30.1"
 
 def deps = [:]
 
@@ -24,6 +28,13 @@ deps.android_gradle = "com.android.tools.build:gradle:$versions.android_gradle"
 deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
 // Junit测试
 deps.junit = "junit:junit:$versions.junit"
+// glide图片加载框架
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+
+def rxjava2 = [:]
+rxjava2.rxjava = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+rxjava2.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+deps.rxjava2 = rxjava2
 
 def support = [:]
 support.app_compat = "com.android.support:appcompat-v7:$versions.support"
@@ -34,6 +45,12 @@ def kotlin = [:]
 kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
 kotlin.gradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
 deps.kotlin = kotlin
+
+// kotlin 协程支持
+def kotlinx_coroutines=[:]
+kotlinx_coroutines.core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.kotlinx_coroutines"
+kotlinx_coroutines.android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.kotlinx_coroutines"
+deps.kotlinx_coroutines=kotlinx_coroutines
 
 def atsl = [:]
 atsl.runner = "com.android.support.test:runner:$versions.atsl_runner"
@@ -47,7 +64,7 @@ def build_versions = [:]
 build_versions.compileSdkVersion = 28
 build_versions.minSdkVersion = 16
 build_versions.targetSdkVersion = 28
-build_versions.build_tools = "27.0.3"
+build_versions.build_tools = "28.0.3"
 ext.build_versions = build_versions
 
 
