@@ -1,6 +1,8 @@
 package com.jddz.testcamera
 
 import android.Manifest
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.Camera
@@ -25,6 +27,12 @@ import java.util.*
  *
  */
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        fun startIntent(context: Activity, requestCode: Int) {
+            context.startActivityForResult(Intent(context, this::class.java), requestCode)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
