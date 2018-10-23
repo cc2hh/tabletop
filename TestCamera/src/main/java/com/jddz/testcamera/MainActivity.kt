@@ -28,6 +28,7 @@ import java.util.*
  */
 class MainActivity : AppCompatActivity() {
 
+
     companion object {
         fun startIntent(context: Activity, requestCode: Int) {
             context.startActivityForResult(Intent(context, this::class.java), requestCode)
