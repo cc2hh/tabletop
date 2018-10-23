@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion build_versions.minSdkVersion
         targetSdkVersion build_versions.targetSdkVersion
-        versionCode 2
-        versionName "1.1.0"
+        versionCode 3
+        versionName "1.2.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -20,6 +20,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 }
@@ -33,7 +38,7 @@ dependencies {
     testImplementation deps.junit
     androidTestImplementation deps.atsl.runner
     androidTestImplementation deps.espresso.core
-
+    implementation deps.glide
     implementation deps.rxjava2.rxjava
     implementation deps.rxjava2.rxandroid
     implementation deps.kotlinx_coroutines.core

@@ -1,11 +1,12 @@
-package com.jddz.testcamera
+package com.jddz.cameralibrary.activity
 
 import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.jddz.testcamera.utils.FileUtils
+import com.jddz.cameralibrary.R
+import com.jddz.cameralibrary.utils.FileUtils
 import kotlinx.android.synthetic.main.activity_image.*
 
 /**
